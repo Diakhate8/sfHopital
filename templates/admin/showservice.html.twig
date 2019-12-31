@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Libelle</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for service in services %}
+                
+        
+        <tr>
+            <td scope="row">{{service.id}}</td>
+            <td>{{service.libelle}}       </td>
+            <td><a class="btn btn-primary" href="{{path('admin.service.edite', {'id':service.id})}}">Editer</a>
+            </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
